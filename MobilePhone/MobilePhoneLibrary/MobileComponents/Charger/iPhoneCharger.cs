@@ -10,7 +10,7 @@ namespace MobilePhone.MobileComponents.Charger {
         public iPhoneCharger(ConsoleOutput output)
         {
             Output = output;
-            Output.WriteLine($"{nameof(iPhoneCharger)} charger selected");
+            Output.WriteLine($"{nameof(iPhoneCharger)} selected");
         }
         public void Charge()
         {

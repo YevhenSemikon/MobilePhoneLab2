@@ -28,6 +28,8 @@ namespace MobilePhoneProgram {
             ICharge chargerComponent = SelectChargerComponent();
             mobile.ChargerComponent = chargerComponent;
             mobile.Charge();
+            Console.WriteLine(System.Environment.NewLine + "Press any key to continue...");
+            Console.ReadKey();
             mobile.GetDescription();
         }
 

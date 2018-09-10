@@ -14,7 +14,7 @@ namespace MobilePhone.MobileComponents.Charger {
         }
         public void Charge()
         {
-            Output.WriteLine($"Charging by {nameof(iPhoneCharger)}");
+            Output.WriteLine($"Charging by {nameof(iPhoneCharger)}");          
         }
 
         public override string ToString()

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MobilePhone.MobileComponents {
     public class ConsoleOutput : IOutput {
-
+        public string textTest;
         public void Write(string text)
         {
             Console.Write(text);
@@ -15,6 +15,7 @@ namespace MobilePhone.MobileComponents {
         public void WriteLine(string text)
         {
             Console.WriteLine(text);
+            textTest = text;
         }
 
     }

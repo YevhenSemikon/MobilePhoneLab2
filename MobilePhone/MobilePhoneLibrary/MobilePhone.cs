@@ -9,22 +9,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MobilePhone.MobileComponents.AudioJack;
+using MobilePhone.MobileComponents.Charger;
+using MobilePhone.MobileComponents;
 
 namespace MobilePhone {
-    public abstract class MobilePhone {
+    public abstract class MobilePhone { 
         private IPlayback vplaybackComponent;
-
-        public IPlayback PlaybackComponent {
+        private ICharge vchargerComponent; 
+        private ConsoleOutput output = new ConsoleOutput();
+        public IPlayback PlaybackComponent
+        {
             get { return vplaybackComponent; }
-            set {
-                if (value.ToString() == "UnknownHeadset") {
-                    Console.WriteLine("Playback could not be set to Mobile");
-                    vplaybackComponent = value;
-                }
-                else {
-                    Console.WriteLine("Set playback to Mobile...");
-                }
-                              
+            set
+            {
+                vplaybackComponent = value;
+                output.WriteLine("Set playback to Mobile...");
+            }
+        }
+
+        public ICharge ChargerComponent
+        {
+            get { return vchargerComponent; }
+            set
+            {
+                vchargerComponent = value;
+                output.WriteLine("Set charger to Mobile...");
             }
         }
 
@@ -34,23 +43,27 @@ namespace MobilePhone {
         public abstract SpeakerBase Speaker { get; }
         public abstract SimCardBase SimCard { get; }
         private void Show(IScreenImage screenImage) { Screen.Show(screenImage); }
-        public string GetDescription()
+        public void GetDescription()
         {
+            Console.Clear();
             var descriptionBuilder = new StringBuilder();
             descriptionBuilder.AppendLine($"Screen Type: {Screen.ToString()}");
             descriptionBuilder.AppendLine($"Microphone Type: {Microphone.ToString()}");
             descriptionBuilder.AppendLine($"Battery Type: {Battery.ToString()}");
             descriptionBuilder.AppendLine($"Speaker Type: {Speaker.ToString()}");
             descriptionBuilder.AppendLine($"SimCard Type: {SimCard.ToString()}");
-            return descriptionBuilder.ToString();
+            descriptionBuilder.AppendLine($"AudioJack Type: {PlaybackComponent?.ToString()?? "AudioJack is not set"}");
+            descriptionBuilder.AppendLine($"Charger Type: {ChargerComponent?.ToString()?? "Charger is not set"}");
+            output.WriteLine(descriptionBuilder.ToString());
         }
-        public void Play(object data)
+        public void Play()
         {
-            if (data.ToString() != "UnknownHeadset") {
-                Console.WriteLine("Play sound in Mobile:");
-                PlaybackComponent.Play(data);
-            }
+            PlaybackComponent.Play();
+        }
 
+        public void Charge()
+        {
+            ChargerComponent.Charge();
         }
     }
 }

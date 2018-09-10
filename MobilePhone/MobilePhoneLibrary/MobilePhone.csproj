@@ -30,10 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="dotMemory.Unit, Version=111.0.0.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
-      <HintPath>..\packages\JetBrains.dotMemoryUnit.3.0.20171219.105559\lib\net35\dotMemory.Unit.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -48,12 +44,17 @@
     <Compile Include="MobileComponents\AudioJack\IPlayBack.cs" />
     <Compile Include="MobileComponents\AudioJack\PhoneSpeaker.cs" />
     <Compile Include="MobileComponents\AudioJack\SamsungHeadset.cs" />
-    <Compile Include="MobileComponents\AudioJack\UnknownHeadset.cs" />
     <Compile Include="MobileComponents\AudioJack\UnofficialiPhoneHeadset.cs" />
     <Compile Include="MobileComponents\Battery\BatteryBase.cs" />
     <Compile Include="MobileComponents\Battery\LiIonBattery.cs" />
     <Compile Include="MobileComponents\Battery\LiPolBattery.cs" />
     <Compile Include="MobileComponents\Battery\NiCdBattery.cs" />
+    <Compile Include="MobileComponents\Charger\ICharge.cs" />
+    <Compile Include="MobileComponents\Charger\iPhoneCharger.cs" />
+    <Compile Include="MobileComponents\Charger\SamsungCharger.cs" />
+    <Compile Include="MobileComponents\Charger\UnofficialiPhoneCharger.cs" />
+    <Compile Include="MobileComponents\ConsoleOutput.cs" />
+    <Compile Include="MobileComponents\IOutput.cs" />
     <Compile Include="MobileComponents\Speaker\SpeakerBase.cs" />
     <Compile Include="MobileComponents\Speaker\MonoSpeaker.cs" />
     <Compile Include="MobileComponents\Speaker\StereoSpeaker.cs" />
@@ -74,6 +75,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SimCorpMobilePhone.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

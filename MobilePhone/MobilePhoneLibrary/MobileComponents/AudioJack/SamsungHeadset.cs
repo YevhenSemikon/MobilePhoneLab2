@@ -6,10 +6,17 @@ using System.Threading.Tasks;
 
 namespace MobilePhone.MobileComponents.AudioJack {
     public class SamsungHeadset : IPlayback {
-        public void Play(object data) {
-            Console.WriteLine($"{nameof(SamsungHeadset)} sound");
+        private ConsoleOutput Output;
+        public SamsungHeadset(ConsoleOutput output)
+        {
+            Output = output;
+            Output.WriteLine($"{nameof(SamsungHeadset)} playback selected");
         }
-        public override string ToString() {
+        public void Play() {
+            Output.WriteLine($"{nameof(SamsungHeadset)} sound");
+        }
+        public override string ToString()
+        {
             return "SamsungHeadset";
         }
     }

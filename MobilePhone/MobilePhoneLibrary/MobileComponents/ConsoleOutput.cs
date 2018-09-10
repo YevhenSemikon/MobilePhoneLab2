@@ -7,13 +7,10 @@ using System.Threading.Tasks;
 namespace MobilePhone.MobileComponents {
     public class ConsoleOutput : IOutput {
         public string textTest;
-        public void Write(string text)
-        {
+        public void Write(string text) {
             Console.Write(text);
         }
-
-        public void WriteLine(string text)
-        {
+        public void WriteLine(string text) {
             Console.WriteLine(text);
             textTest = text;
         }

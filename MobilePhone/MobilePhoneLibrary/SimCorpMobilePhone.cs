@@ -20,6 +20,6 @@ namespace MobilePhone {
         private readonly DynamicMicrophone vDynamicMicrophone = new DynamicMicrophone();
         private readonly LiPolBattery vLiPolBattery = new LiPolBattery();
         private readonly StereoSpeaker vStereoSpeaker = new StereoSpeaker(30);
-        private readonly LifeSimCard vSimCard = new LifeSimCard ();
+        private readonly LifeSimCard vSimCard = new LifeSimCard();
     }
 }

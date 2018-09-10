@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace MobilePhone.MobileComponents.Charger {
-   public interface ICharge {
+    public interface ICharge {
         void Charge();
     }
 }

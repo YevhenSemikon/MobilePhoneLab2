@@ -8,11 +8,10 @@ namespace UnitTestMobilePhone {
     [TestClass]
     public class ChargerTest {
         [TestMethod]
-        public void iPhoneChargerTest()
-        {
+        public void iPhoneChargerTest() {
             var mobile = new SimCorpMobilePhone();
             var consoleOutput = new ConsoleOutput();
-            ICharge chargerComponent = new iPhoneCharger(consoleOutput);        
+            ICharge chargerComponent = new iPhoneCharger(consoleOutput);
             mobile.ChargerComponent = chargerComponent;
             var expected1 = "iPhoneCharger selected";
             var actual1 = consoleOutput.textTest;
@@ -24,8 +23,7 @@ namespace UnitTestMobilePhone {
         }
 
         [TestMethod]
-        public void SamsungChargerTest()
-        {
+        public void SamsungChargerTest() {
             var mobile = new SimCorpMobilePhone();
             var consoleOutput = new ConsoleOutput();
             ICharge chargerComponent = new SamsungCharger(consoleOutput);
@@ -40,8 +38,7 @@ namespace UnitTestMobilePhone {
         }
 
         [TestMethod]
-        public void UnofficialiPhoneChargerTest()
-        {
+        public void UnofficialiPhoneChargerTest() {
             var mobile = new SimCorpMobilePhone();
             var consoleOutput = new ConsoleOutput();
             ICharge chargerComponent = new UnofficialiPhoneCharger(consoleOutput);

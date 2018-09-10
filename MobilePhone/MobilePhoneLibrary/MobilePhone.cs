@@ -13,38 +13,31 @@ using MobilePhone.MobileComponents.Charger;
 using MobilePhone.MobileComponents;
 
 namespace MobilePhone {
-    public abstract class MobilePhone { 
+    public abstract class MobilePhone {
         private IPlayback vplaybackComponent;
-        private ICharge vchargerComponent; 
+        private ICharge vchargerComponent;
         private ConsoleOutput output = new ConsoleOutput();
-        public IPlayback PlaybackComponent
-        {
+        public IPlayback PlaybackComponent {
             get { return vplaybackComponent; }
-            set
-            {
+            set {
                 vplaybackComponent = value;
                 output.WriteLine("Set playback to Mobile...");
             }
         }
-
-        public ICharge ChargerComponent
-        {
+        public ICharge ChargerComponent {
             get { return vchargerComponent; }
-            set
-            {
+            set {
                 vchargerComponent = value;
                 output.WriteLine("Set charger to Mobile...");
             }
         }
-
         public abstract ScreenBase Screen { get; }
         public abstract MicrophoneBase Microphone { get; }
         public abstract BatteryBase Battery { get; }
         public abstract SpeakerBase Speaker { get; }
         public abstract SimCardBase SimCard { get; }
         private void Show(IScreenImage screenImage) { Screen.Show(screenImage); }
-        public void GetDescription()
-        {
+        public void GetDescription() {
             Console.Clear();
             var descriptionBuilder = new StringBuilder();
             descriptionBuilder.AppendLine($"Screen Type: {Screen.ToString()}");
@@ -52,17 +45,14 @@ namespace MobilePhone {
             descriptionBuilder.AppendLine($"Battery Type: {Battery.ToString()}");
             descriptionBuilder.AppendLine($"Speaker Type: {Speaker.ToString()}");
             descriptionBuilder.AppendLine($"SimCard Type: {SimCard.ToString()}");
-            descriptionBuilder.AppendLine($"AudioJack Type: {PlaybackComponent?.ToString()?? "AudioJack is not set"}");
-            descriptionBuilder.AppendLine($"Charger Type: {ChargerComponent?.ToString()?? "Charger is not set"}");
+            descriptionBuilder.AppendLine($"AudioJack Type: {PlaybackComponent?.ToString() ?? "AudioJack is not set"}");
+            descriptionBuilder.AppendLine($"Charger Type: {ChargerComponent?.ToString() ?? "Charger is not set"}");
             output.WriteLine(descriptionBuilder.ToString());
         }
-        public void Play()
-        {
+        public void Play() {
             PlaybackComponent.Play();
         }
-
-        public void Charge()
-        {
+        public void Charge() {
             ChargerComponent.Charge();
         }
     }

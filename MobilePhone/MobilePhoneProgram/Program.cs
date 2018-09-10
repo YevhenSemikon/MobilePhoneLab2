@@ -14,8 +14,7 @@ using MobilePhone.MobileComponents;
 
 namespace MobilePhoneProgram {
     class Program {
-        static void Main(string[] args)
-        {  
+        static void Main(string[] args) {
             SimCorpMobilePhone mobile = new SimCorpMobilePhone();
             mobile.GetDescription();
             Console.WriteLine(System.Environment.NewLine + "Press any key to continue...");
@@ -32,10 +31,7 @@ namespace MobilePhoneProgram {
             Console.ReadKey();
             mobile.GetDescription();
         }
-
-
-        private static ICharge SelectChargerComponent()
-        {
+        private static ICharge SelectChargerComponent() {
             var consoleOutput = new ConsoleOutput();
             Console.Clear();
             ICharge chargeComponent = null;
@@ -50,25 +46,22 @@ namespace MobilePhoneProgram {
                 case "3":
                 chargeComponent = new UnofficialiPhoneCharger(consoleOutput);
                 break;
-                default:               
+                default:
                 Console.WriteLine("Unknown charger component selected, please select component from the list.");
                 Console.WriteLine(System.Environment.NewLine + "Press any key to continue...");
                 Console.ReadKey();
                 chargeComponent = SelectChargerComponent();
                 break;
             }
-            return chargeComponent;           
+            return chargeComponent;
         }
-
-
-        private static IPlayback SelectPlaybackComponent()
-        {
+        private static IPlayback SelectPlaybackComponent() {
             Console.Clear();
-            var consoleOutput = new ConsoleOutput();            
+            var consoleOutput = new ConsoleOutput();
             IPlayback playbackComponent = null;
             string playbackIndex = GetChosenIndex(playbackComponent);
             switch (playbackIndex) {
-                case "1":                
+                case "1":
                 playbackComponent = new iPhoneHeadset(consoleOutput);
                 break;
                 case "2":
@@ -89,9 +82,7 @@ namespace MobilePhoneProgram {
             }
             return playbackComponent;
         }
-
-        private static string GetChosenIndex(IPlayback playbackComponent)
-        {
+        private static string GetChosenIndex(IPlayback playbackComponent) {
             var text = new StringBuilder();
             text.Append("Select playback component (specify index): " + System.Environment.NewLine);
             text.Append("1 - iPhoneHeadset" + System.Environment.NewLine);
@@ -102,8 +93,7 @@ namespace MobilePhoneProgram {
             string playbackIndex = Console.ReadLine();
             return playbackIndex;
         }
-        private static string GetChosenIndex(ICharge playbackComponent)
-        {
+        private static string GetChosenIndex(ICharge playbackComponent) {
             var text = new StringBuilder();
             text.Append("Select charger component (specify index): " + System.Environment.NewLine);
             text.Append("1 - iPhoneCharger" + System.Environment.NewLine);

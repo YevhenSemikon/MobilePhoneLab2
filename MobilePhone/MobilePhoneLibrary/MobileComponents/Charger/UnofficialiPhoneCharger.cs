@@ -7,17 +7,14 @@ using System.Threading.Tasks;
 namespace MobilePhone.MobileComponents.Charger {
     public class UnofficialiPhoneCharger : ICharge {
         private ConsoleOutput Output;
-        public UnofficialiPhoneCharger(ConsoleOutput output)
-        {
+        public UnofficialiPhoneCharger(ConsoleOutput output) {
             Output = output;
             Output.WriteLine($"{nameof(UnofficialiPhoneCharger)} selected");
         }
-        public void Charge()
-        {
+        public void Charge() {
             Output.WriteLine($"Charging by {nameof(UnofficialiPhoneCharger)}");
         }
-        public override string ToString()
-        {
+        public override string ToString() {
             return "UnofficialiPhoneCharger";
         }
     }

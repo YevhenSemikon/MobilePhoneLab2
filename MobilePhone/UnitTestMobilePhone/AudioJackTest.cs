@@ -13,8 +13,7 @@ namespace UnitTestMobilePhone {
     [TestClass]
     public class AudioJackTest {
         [TestMethod]
-        public void iPhoneHeadsetTest()
-        {
+        public void iPhoneHeadsetTest() {
             var mobile = new SimCorpMobilePhone();
             var consoleOutput = new ConsoleOutput();
             IPlayback playbackComponent = new iPhoneHeadset(consoleOutput);
@@ -29,8 +28,7 @@ namespace UnitTestMobilePhone {
         }
 
         [TestMethod]
-        public void SamsungHeadsetTest()
-        {
+        public void SamsungHeadsetTest() {
             var mobile = new SimCorpMobilePhone();
             var consoleOutput = new ConsoleOutput();
             IPlayback playbackComponent = new SamsungHeadset(consoleOutput);
@@ -45,8 +43,7 @@ namespace UnitTestMobilePhone {
         }
 
         [TestMethod]
-        public void PhoneSpeakerTest()
-        {
+        public void PhoneSpeakerTest() {
             var mobile = new SimCorpMobilePhone();
             var consoleOutput = new ConsoleOutput();
             IPlayback playbackComponent = new PhoneSpeaker(consoleOutput);
@@ -61,8 +58,7 @@ namespace UnitTestMobilePhone {
         }
 
         [TestMethod]
-        public void UnofficialiPhoneHeadsetTest()
-        {
+        public void UnofficialiPhoneHeadsetTest() {
             var mobile = new SimCorpMobilePhone();
             var consoleOutput = new ConsoleOutput();
             IPlayback playbackComponent = new UnofficialiPhoneHeadset(consoleOutput);

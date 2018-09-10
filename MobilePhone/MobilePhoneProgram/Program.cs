@@ -93,7 +93,7 @@ namespace MobilePhoneProgram {
             string playbackIndex = Console.ReadLine();
             return playbackIndex;
         }
-        private static string GetChosenIndex(ICharge playbackComponent) {
+        private static string GetChosenIndex(ICharge chargeComponent) {
             var text = new StringBuilder();
             text.Append("Select charger component (specify index): " + System.Environment.NewLine);
             text.Append("1 - iPhoneCharger" + System.Environment.NewLine);

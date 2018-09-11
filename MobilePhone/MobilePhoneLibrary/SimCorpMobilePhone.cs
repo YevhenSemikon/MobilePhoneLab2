@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MobilePhone.MobileComponents.Microphone;
+﻿using MobilePhone.MobileComponents.Microphone;
 using MobilePhone.MobileComponents.Screen;
 using MobilePhone.MobileComponents.Battery;
 using MobilePhone.MobileComponents.Speaker;

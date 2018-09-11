@@ -3,6 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MobilePhone;
 using MobilePhone.MobileComponents.Charger;
 using MobilePhone.MobileComponents;
+using MobilePhone.MobilePhoneProgram;
 
 namespace UnitTestMobilePhone {
     [TestClass]

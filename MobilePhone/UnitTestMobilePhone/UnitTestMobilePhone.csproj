@@ -59,6 +59,10 @@
       <Project>{5a762813-cee6-4411-af39-1c8d8a242133}</Project>
       <Name>MobilePhone</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MobilePhoneProgram\MobilePhoneProgram.csproj">
+      <Project>{0C1D0769-C42B-4384-A853-6ACD02420E0B}</Project>
+      <Name>MobilePhoneProgram</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

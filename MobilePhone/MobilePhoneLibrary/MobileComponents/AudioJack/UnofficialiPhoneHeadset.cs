@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace MobilePhone.MobileComponents.AudioJack {
     public class UnofficialiPhoneHeadset : IPlayback {
-        private ConsoleOutput Output;
-        public UnofficialiPhoneHeadset(ConsoleOutput output) {
+        private IOutput Output;
+        public UnofficialiPhoneHeadset(IOutput output) {
             Output = output;
             Output.WriteLine($"{nameof(UnofficialiPhoneHeadset)} playback selected");
         }
         public void Play() {
+            Output.WriteLine("Play sound in Mobile:");
             Output.WriteLine($"{nameof(UnofficialiPhoneHeadset)} sound");
         }
         public override string ToString() {
